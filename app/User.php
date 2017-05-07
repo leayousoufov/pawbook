@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the posts the user has authored.
+     */
+    public function posts()
+    {
+      return $this->hasMany('App\Post');
+    }
+
+    /**
+     * Get the comments the user has authored.
+     */
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+    }
 }
